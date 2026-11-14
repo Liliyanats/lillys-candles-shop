@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ТВОЕТО-GITHUB-ИМЕ/lillys-candles-shop   # <- смени с твоето потребителско име и име на хранилището
+  repo: Liliyanats/lillys-candles-shop
   branch: main
 
 media_folder: "images/uploads"
