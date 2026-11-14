@@ -1,0 +1,54 @@
+backend:
+  name: github
+  repo: ТВОЕТО-GITHUB-ИМЕ/lillys-candles-shop   # <- смени с твоето потребителско име и име на хранилището
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+locale: "bg"
+
+collections:
+  - name: "shop"
+    label: "Магазин"
+    files:
+      - name: "products"
+        label: "Свещи"
+        file: "content/products.json"
+        fields:
+          - label: "Свещи"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} – {{fields.price}} €"
+            fields:
+              - {label: "Код (латиница, без интервали)", name: "id", widget: "string"}
+              - {label: "Име", name: "name", widget: "string"}
+              - {label: "Аромати (кратко)", name: "scent", widget: "string", required: false}
+              - {label: "Цена (€)", name: "price", widget: "number", value_type: "float", step: 0.05}
+              - {label: "Снимка", name: "image", widget: "image"}
+              - {label: "Описание", name: "description", widget: "text"}
+              - {label: "Време на горене (напр. около 20 часа)", name: "burn_time", widget: "string", required: false}
+              - {label: "Линк към медитацията", name: "meditation_url", widget: "string", required: false}
+      - name: "bundles"
+        label: "Бъндъли"
+        file: "content/bundles.json"
+        fields:
+          - label: "Бъндъли"
+            name: "bundles"
+            widget: "list"
+            summary: "{{fields.name}} – {{fields.price}} €"
+            fields:
+              - {label: "Код (латиница, без интервали)", name: "id", widget: "string"}
+              - {label: "Име", name: "name", widget: "string"}
+              - {label: "Цена (€)", name: "price", widget: "number", value_type: "float", step: 0.05}
+              - {label: "Снимка", name: "image", widget: "image"}
+              - {label: "Описание", name: "description", widget: "text"}
+      - name: "settings"
+        label: "Контакти и настройки"
+        file: "content/settings.json"
+        fields:
+          - {label: "Телефон (за показване)", name: "phone_display", widget: "string"}
+          - {label: "WhatsApp (359…, без + и интервали)", name: "whatsapp", widget: "string"}
+          - {label: "Viber (359…, без + и интервали)", name: "viber", widget: "string"}
+          - {label: "Instagram потребителско име", name: "instagram", widget: "string"}
+          - {label: "Имейл", name: "email", widget: "string"}
+          - {label: "Бележка за доставка", name: "shipping_note", widget: "string"}
