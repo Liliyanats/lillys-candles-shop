@@ -1,10 +1,10 @@
 {
   "bundles": [
     {
-      "id": "chay-i-sveshch",
-      "name": "Бъндъл: билков чай + свещ",
+      "id": "komplektschai",
+      "name": "Комплект билков чай и свещ",
       "price": 21.95,
-      "image": "images/placeholder-bundle.svg",
+      "image": "/images/uploads/viber_image_2026-11-17_13-20-36-579.jpg",
       "description": "Билков чай и ароматна соева свещ по твой избор – малък ритуал за спокойна вечер. Избери аромата на свещта в бележката към поръчката."
     },
     {
