@@ -121,6 +121,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.95rem;b
   <p class="center" id="shipNote"></p>
   <form name="order" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" id="orderForm">
     <input type="hidden" name="form-name" value="order">
+    <input type="hidden" name="_subject" value="Нова поръчка – Lilly's Candles">
     <p class="hp"><label>Не попълвай: <input name="bot-field"></label></p>
     <div class="summary"><strong>Твоята поръчка</strong>
       <div id="summaryList"><em>Избери количества от свещите и бъндъла по-горе.</em></div>
@@ -153,7 +154,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.95rem;b
 
 <script>
 const fmt=n=>n.toFixed(2).replace('.',',')+' €';
-const cart={};let items={};
+const cart={};let items={};let endpoint='/';
 const get=u=>fetch(u).then(r=>r.json());
 const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function card(p,med){
@@ -181,6 +182,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b
   document.getElementById('bundleGrid').innerHTML=bundles.map(b=>card(b,false)).join('');
   document.getElementById('meditations').innerHTML=products.filter(p=>p.meditation_url).map(p=>`<a href="${esc(p.meditation_url)}" target="_blank" rel="noopener">🎧 ${esc(p.name)}<small>10-минутна медитация</small></a>`).join('');
   document.getElementById('shipNote').textContent=s.shipping_note||'';
+  if(s.order_endpoint)endpoint=s.order_endpoint;
   document.getElementById('contacts').innerHTML=
    `<a href="https://wa.me/${s.whatsapp}" target="_blank" rel="noopener">💬 WhatsApp</a>
     <a href="viber://chat?number=%2B${s.viber}">📱 Viber</a>
@@ -193,8 +195,9 @@ orderForm.addEventListener('submit',async e=>{
   if(!orderSummary.value){alert('Моля, избери поне един продукт от списъка по-горе.');return}
   sendBtn.disabled=true;sendBtn.textContent='Изпращане…';
   try{
-    const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(orderForm)).toString()});
+    const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:new URLSearchParams(new FormData(orderForm)).toString()});
     if(!r.ok)throw 0;
+    if(endpoint!=='/'){const j=await r.json().catch(()=>({}));if(j.error||j.errors)throw 0}
     orderForm.style.display='none';okBox.style.display='block';okBox.scrollIntoView({behavior:'smooth'});
   }catch(_){alert('Нещо се обърка. Моля, пиши ми във WhatsApp, Viber или Instagram.');sendBtn.disabled=false;sendBtn.textContent='Изпрати поръчката'}
 });
