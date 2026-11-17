@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lilly's Candles – соеви свещи с етерични масла</title>
+<meta name="description" content="Ръчно изработени 100% натурални соеви свещи с етерични масла и дървен фитил.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7F2;--cream:#F4EADF;--sand:#E8D8C7;--accent:#B58B73;--accent-d:#8F6650;--text:#4F4038;--muted:#7A675B;--line:#E6D8CA}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Nunito',system-ui,sans-serif;font-size:19px;line-height:1.65}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .5em}
+h2{font-size:2.4rem;text-align:center}
+h3{font-size:1.7rem}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 20px;max-width:1080px;margin:0 auto}
+.nav img{height:64px;mix-blend-mode:multiply}
+.nav nav{display:flex;gap:22px;font-weight:600;font-size:1rem}
+.nav nav a{text-decoration:none}
+.nav nav a:hover{color:var(--accent-d)}
+.hero{text-align:center;padding:56px 0 40px;background:linear-gradient(var(--cream),var(--bg))}
+.hero img{width:min(300px,70vw);mix-blend-mode:multiply}
+.hero h1{font-size:clamp(2.2rem,6vw,3.4rem);margin-top:10px}
+.hero p{max-width:620px;margin:0 auto 24px;color:var(--muted);font-size:1.15rem}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border:0;border-radius:999px;padding:14px 30px;font:700 1.05rem 'Nunito',sans-serif;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--accent-d)}
+.btn.ghost{background:transparent;color:var(--accent-d);border:2px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent);color:#fff}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.badges span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:.95rem;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,340px));justify-content:center;gap:28px;margin-top:36px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.card img.pic{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--cream)}
+.card .body{padding:22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.scent{color:var(--accent-d);font-weight:600;font-size:.98rem;margin:0}
+.desc{font-size:1rem;color:var(--muted);margin:6px 0 10px}
+.price{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;flex-wrap:wrap}
+.qty{display:flex;align-items:center;border:1.5px solid var(--sand);border-radius:999px;overflow:hidden;background:#fff}
+.qty button{width:46px;height:46px;border:0;background:var(--cream);font-size:1.5rem;cursor:pointer;color:var(--accent-d)}
+.qty button:hover{background:var(--sand)}
+.qty output{min-width:38px;text-align:center;font-weight:700}
+.link{display:inline-block;margin-top:10px;font-size:.98rem;color:var(--accent-d);font-weight:600}
+.alt{background:var(--cream)}
+.care{max-width:760px;margin:30px auto 0;display:grid;gap:14px}
+.care div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+.med{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:30px}
+.med a{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center;text-decoration:none;font-weight:700;font-size:1.1rem;transition:.2s}
+.med a:hover{border-color:var(--accent);transform:translateY(-3px)}
+.med small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+.center{text-align:center;max-width:640px;margin:0 auto 10px;color:var(--muted)}
+form{max-width:680px;margin:30px auto 0;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:1rem}
+input,textarea,select{font:inherit;font-size:1.05rem;padding:13px 14px;border:1.5px solid var(--sand);border-radius:12px;background:var(--bg);color:var(--text);width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.summary{background:var(--cream);border-radius:14px;padding:16px 18px}
+.summary ul{margin:6px 0;padding-left:20px}
+.total{font-weight:700;font-size:1.2rem}
+.ok{display:none;max-width:680px;margin:30px auto 0;background:#fff;border:2px solid var(--accent);border-radius:22px;padding:30px;text-align:center}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:26px}
+.contact a{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--sand);border-radius:999px;padding:14px 26px;font-weight:700;text-decoration:none;transition:.2s}
+.contact a:hover{border-color:var(--accent);background:var(--cream)}
+footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+.hp{position:absolute;left:-9999px}
+@media(max-width:640px){body{font-size:18px}.nav nav{display:none}.two{grid-template-columns:1fr}h2{font-size:2rem}section{padding:48px 0}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <a href="#top"><img src="images/logo.png" alt="Lilly's Candles"></a>
+  <nav><a href="#sveshchi">Свещи</a><a href="#bundles">Бъндъли</a><a href="#meditacii">Медитации</a><a href="#porachka">Поръчка</a><a href="#kontakti">Контакти</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <img src="images/logo.png" alt="Lilly's Candles with essential oils">
+  <h1>Свещи, които подарява спокойствие</h1>
+  <p>Ръчно изработени соеви свещи с чисти етерични масла – за вечери, в които се връщаш към себе си.</p>
+  <a class="btn" href="#sveshchi">Виж свещите</a>
+  <div class="badges"><span>🌿 100% натурален соев восък</span><span>🪵 Дървен фитил</span><span>🌸 Само етерични масла</span><span>🚫 Без химикали и добавки</span></div>
+</div></div>
+
+<section id="sveshchi"><div class="wrap">
+  <h2>Нашите свещи</h2>
+  <p class="center">Стъклена чашка със 135 г чист соев восък. Всяка кутия идва с картичка и QR код към 10-минутна релаксираща медитация.</p>
+  <div class="grid" id="products"></div>
+</div></section>
+
+<section id="bundles" class="alt"><div class="wrap">
+  <h2>Бъндъли</h2>
+  <p class="center">Идеални за подарък или за малко повече уют.</p>
+  <div class="grid" id="bundleGrid"></div>
+</div></section>
+
+<section id="meditacii"><div class="wrap">
+  <h2>Медитации към свещите</h2>
+  <p class="center">Загубила си картичката от кутията? Тук можеш да намериш медитацията за твоя аромат.</p>
+  <div class="med" id="meditations"></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Как да се грижиш за свещта</h2>
+  <div class="care">
+    <div><strong>Първото запалване е най-важно.</strong> Остави свещта да гори, докато восъкът се разтопи до самия ръб на чашката – така не се образува „кладенец“.</div>
+    <div><strong>Подрязвай фитила</strong> до 6–8 мм преди всяко палене.</div>
+    <div><strong>Гори по 2–4 часа</strong> наведнъж за равномерно топене.</div>
+    <div><strong>Не оставяй горяща свещ без надзор</strong> и я дръж далеч от деца и домашни любимци.</div>
+  </div>
+</div></section>
+
+<section id="porachka"><div class="wrap">
+  <h2>Поръчай</h2>
+  <p class="center" id="shipNote"></p>
+  <form name="order" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" id="orderForm">
+    <input type="hidden" name="form-name" value="order">
+    <input type="hidden" name="_subject" value="Нова поръчка – Lilly's Candles">
+    <p class="hp"><label>Не попълвай: <input name="bot-field"></label></p>
+    <div class="summary"><strong>Твоята поръчка</strong>
+      <div id="summaryList"><em>Избери количества от свещите и бъндъла по-горе.</em></div>
+    </div>
+    <input type="hidden" name="order_summary" id="orderSummary">
+    <input type="hidden" name="order_total" id="orderTotal">
+    <div class="two">
+      <label>Име и фамилия<input name="name" required autocomplete="name"></label>
+      <label>Телефон<input name="phone" type="tel" required autocomplete="tel"></label>
+    </div>
+    <label>Имейл (по желание)<input name="email" type="email" autocomplete="email"></label>
+    <div class="two">
+      <label>Куриер<input name="courier" value="Спиди" readonly></label>
+      <label>Град<input name="city" required autocomplete="address-level2"></label>
+    </div>
+    <label>Адрес или офис на куриера<input name="address" required autocomplete="street-address"></label>
+    <label>Бележка (напр. кой аромат за бъндъла)<textarea name="note" rows="3"></textarea></label>
+    <button class="btn" type="submit" id="sendBtn">Изпрати поръчката</button>
+  </form>
+  <div class="ok" id="okBox"><h3>Благодаря ти! 🤍</h3><p>Получих поръчката ти и ще се свържа с теб скоро, за да я потвърдим.</p><button class="btn ghost" type="button" id="newOrder">Направи нова поръчка</button></div>
+</div></section>
+
+<section id="kontakti" class="alt"><div class="wrap">
+  <h2>Пиши ми директно</h2>
+  <p class="center">Предпочиташ съобщение? Отговарям най-бързо в тези канали.</p>
+  <div class="contact" id="contacts"></div>
+</div></section>
+</main>
+<footer>© Lilly's Candles · Свещи с етерични масла</footer>
+
+<script>
+const fmt=n=>n.toFixed(2).replace('.',',')+' €';
+const cart={};let items={};let endpoint='/';
+const get=u=>fetch(u).then(r=>r.json());
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function card(p,med){
+  items[p.id]=p;
+  return `<article class="card"><img class="pic" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">
+  <div class="body"><h3>${esc(p.name)}</h3>${p.scent?`<p class="scent">${esc(p.scent)}</p>`:''}
+  <p class="desc">${esc(p.description)}</p>${p.burn_time?`<p class="desc"><strong>Време на горене:</strong> ${esc(p.burn_time)}</p>`:''}
+  ${med&&p.meditation_url?`<a class="link" href="${esc(p.meditation_url)}" target="_blank" rel="noopener">🎧 Послушай медитацията</a>`:''}
+  <div class="row"><span class="price">${fmt(+p.price)}</span>
+  <div class="qty"><button type="button" aria-label="по-малко" data-id="${esc(p.id)}" data-d="-1">−</button><output id="q-${esc(p.id)}">0</output><button type="button" aria-label="повече" data-id="${esc(p.id)}" data-d="1">+</button></div></div></div></article>`;
+}
+function render(){
+  const lines=Object.keys(cart).filter(k=>cart[k]>0);
+  let total=0;
+  const list=lines.map(k=>{const p=items[k],t=p.price*cart[k];total+=t;return `${cart[k]} × ${p.name} – ${fmt(t)}`});
+  document.getElementById('summaryList').innerHTML=list.length?`<ul>${list.map(l=>`<li>${esc(l)}</li>`).join('')}</ul><div class="total">Общо: ${fmt(total)}</div><small>+ доставка според куриера, плащане при доставка</small>`:'<em>Избери количества от свещите и бъндъла по-горе.</em>';
+  orderSummary.value=list.join('\n');orderTotal.value=list.length?fmt(total):'';
+  Object.keys(items).forEach(k=>{const o=document.getElementById('q-'+k);if(o)o.textContent=cart[k]||0});
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b)return;
+  const id=b.dataset.id;cart[id]=Math.max(0,(cart[id]||0)+ +b.dataset.d);render()});
+(async()=>{
+  const [{products},{bundles},s]=await Promise.all([get('content/products.json'),get('content/bundles.json'),get('content/settings.json')]);
+  document.getElementById('products').innerHTML=products.map(p=>card(p,true)).join('');
+  document.getElementById('bundleGrid').innerHTML=bundles.map(b=>card(b,false)).join('');
+  document.getElementById('meditations').innerHTML=products.filter(p=>p.meditation_url).map(p=>`<a href="${esc(p.meditation_url)}" target="_blank" rel="noopener">🎧 ${esc(p.name)}<small>10-минутна медитация</small></a>`).join('');
+  document.getElementById('shipNote').textContent=s.shipping_note||'';
+  if(s.order_endpoint)endpoint=s.order_endpoint;
+  document.getElementById('contacts').innerHTML=
+   `<a href="https://wa.me/${s.whatsapp}" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a href="viber://chat?number=%2B${s.viber}">📱 Viber</a>
+    <a href="https://ig.me/m/${s.instagram}" target="_blank" rel="noopener">📷 Instagram</a>
+    <a href="mailto:${s.email}">✉️ Имейл</a>`;
+  render();
+})();
+orderForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!orderSummary.value){alert('Моля, избери поне един продукт от списъка по-горе.');return}
+  sendBtn.disabled=true;sendBtn.textContent='Изпращане…';
+  try{
+    const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:new URLSearchParams(new FormData(orderForm)).toString()});
+    if(!r.ok)throw 0;
+    if(endpoint!=='/'){const j=await r.json().catch(()=>({}));if(j.error||j.errors)throw 0}
+    orderForm.style.display='none';okBox.style.display='block';okBox.scrollIntoView({behavior:'smooth'});
+    orderForm.reset();Object.keys(cart).forEach(k=>delete cart[k]);render();sendBtn.disabled=false;sendBtn.textContent='Изпрати поръчката';
+  }catch(_){alert('Нещо се обърка. Моля, пиши ми във WhatsApp, Viber или Instagram.');sendBtn.disabled=false;sendBtn.textContent='Изпрати поръчката'}
+});
+newOrder.addEventListener('click',()=>{okBox.style.display='none';orderForm.style.display='grid';document.getElementById('sveshchi').scrollIntoView({behavior:'smooth'})});
+</script>
+</body>
+</html>
